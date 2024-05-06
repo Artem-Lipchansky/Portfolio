@@ -1,0 +1,389 @@
+  /* MOBILE */
+
+  .is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+    .header-container {
+      position: absolute;
+      top: 22px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+.header{
+  position: absolute;
+  padding: 0 15px;
+    top: 32px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+  .header-logo__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-logo__svg{
+    margin-left: 10px;
+  }
+
+  .menu-open{
+    display: flex;
+    margin-left: 5px;
+    justify-content: flex-end;
+    width: 28px;
+    height: 28px;
+    border: none;
+  }
+
+.header-logo__svg {
+  fill: #FAFAFA;
+}
+
+  .menu-open__svg  {
+    stroke: #FAFAFA;
+    fill: #FAFAFA;
+  }
+
+
+     .menu-open {
+       width: 28px;
+       height: 28px;
+       border: none;
+       background-color: transparent;
+     }
+
+.header-nav {
+  display: none;
+}
+
+ .header-order {
+ display: none;
+ }
+.header-items{
+  text-decoration: none;
+}
+  @media screen and (min-width: 375px) {
+   
+    
+
+  .header-container {
+    position: absolute;
+    top: 22px;
+    left: 0;
+right: 0;
+width: 100%;
+    display: flex;
+  justify-content: space-between;
+  }
+
+  .header-logo__container {
+    display: flex;
+  }
+
+  .header-logo__svg {
+margin-left: 10px;
+stroke: #FAFAFA;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-order{
+    display: none;
+  }
+
+  .menu-open {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+  }
+
+  .menu-open__svg{
+    stroke: #FAFAFA;
+    fill: #FAFAFA;
+  }
+
+  }
+
+
+
+  /* TABLET */
+  @media screen and (min-width: 768px) {
+   
+
+
+.header-container {
+ position: absolute;
+ top: 10px;
+ left: 0;
+ width: 100%;
+background-color: transparent;
+z-index: 1000;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+    
+
+
+    .header-nav {
+display: block;
+height: 30px;
+}
+
+.nav-menu__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-menu__btn {
+  font-family: 'Inter Tight',
+    'san-serif';
+    color: #FAFAFA;
+  font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    border: none;
+    background-color: transparent;
+    margin-bottom: 15px;
+    padding-left: 5px;
+}
+
+.header-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+
+.nav-menu {
+  width: max-content;
+  padding-top: 10px;
+padding-bottom: 10px;
+}
+
+
+.menu-open{
+  display: none;
+}
+
+.menu-btn__text{
+  font-family: 'Inter Tight',
+    'san-serif';
+  font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+  color: #FAFAFA;
+}
+
+ .header-order {
+display: block;
+border-radius: 60px;
+border: none;
+padding: 18px 24px;
+background-color: #ED3B44;
+}
+
+    .header-order:hover,
+    .header-order:focus {
+      background-color: #E0373F;
+    }
+
+      .header-order__link {
+        font-family: 'Inter Tight',
+          'san-serif';
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: -0.02em;
+        color: #FAFAFA;
+        text-decoration: none;
+      }
+
+  .mobile-menu {
+    display: none;
+  }
+
+    .menu-open{
+      display: none;
+     
+    }
+  }
+
+    /* DESKTOP */
+  @media screen and (min-width: 1440px) {
+   
+
+  .header-container {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    width: 1376px;
+    justify-content: space-between;
+    z-index: 1000;
+  }
+  }
+
+
+
+ .header-order:hover,
+ .header-order:focus {
+   background-color: #E0373F;
+ }
+
+
+ .nav-menu__btn {
+   display: block;
+ }
+
+
+.header-list {
+display: flex;
+flex-direction: column;
+align-items: center;
+transition: opacity 0.5s linear;
+opacity: 0;
+}
+    
+.header-list:hover {
+opacity: 1;
+}
+    
+.header-items:not(:last-child) {
+margin-bottom: 10px;
+}
+    
+.header-link {
+font-family: 'Inter Tight',
+'san-serif';
+font-weight: 500;
+font-size: 16px;
+letter-spacing: -0.02em;
+text-decoration: none;
+text-decoration-skip-ink: none;
+color: #FAFAFA;
+}
+    
+.header-link:hover,
+.header-link:focus {
+color: #ED3B44;
+}
+
+
+
+        
+.mobile-menu.is-open {
+opacity: 1;
+visibility: visible;
+pointer-events: auto;
+transform: translate(0%);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+        
+.mobile-menu {
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+transform: translateX(100%);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+z-index: 99999;
+background-image: url(../img/Herocolor6-mobile.png);
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+ .mobile-wrap {
+ 
+  width: 100%;
+  height: 100%;
+  padding: 34px 20px 64px;
+ }
+
+ .mobile-container__svg {
+display: flex;
+justify-content: flex-end;
+ }
+
+ .menu-close {
+position: absolute;
+top: 20px;
+right: 20px;
+   
+   background-color: transparent;
+   border: none;
+ }
+
+ .menu-close__svg {
+   stroke: #FAFAFA;
+ }
+
+ .mob-menu__list{
+display: flex;
+flex-direction: column;
+align-items: center;
+ }
+
+.markup{
+  display: flex;
+  justify-content: center;
+padding-top: 200px;
+padding-bottom: 100px;
+
+}
+
+.mobile-container__btn{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.mobile-btn {
+margin-top: auto;
+align-self: center;
+
+display: block;
+  border-radius: 60px;
+  border: none;
+  padding: 18px 24px;
+  background-color: #ED3B44;
+}
+
+
+
+.mob-menu__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.mob-menu__link {
+    font-family: 'Inter Tight',
+        'san-serif';
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      text-decoration-skip-ink: none;
+      color: #FAFAFA;
+}
+
+.mob-menu__link:hover,
+.mob-menu__link:focus {
+  color: #ED3B44;
+}
