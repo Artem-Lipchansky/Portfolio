@@ -1,72 +1,75 @@
 import axios from 'axios';
-import Swiper from 'swiper';
-import 'swiper/swiper-bundle.css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation,Keyboard, Mousewheel } from 'swiper/modules';
+import arrowLeftIcon from '../images/icons/sprite.svg';
+import arrowRightIcon from '../images/icons/sprite.svg';
 
-axios.defaults.baseURL = 'https://portfolio-js.b.goit.study/api';
+const BASE_URI = 'https://portfolio-js.b.goit.study/api/reviews';
+const gallery = document.querySelector('.gallery');
 
-export const reviewWrapper = document.querySelector('.reviews-wrapper');
-const reviewsSwiper = document.querySelector('.reviews-swiper')
+async function getReviewsFromServer() {
+  try {
+    const { data } = await axios.get(BASE_URI);
 
+    gallery.innerHTML = `<div class="swiper mySwiper">
+      <p class = "review">REVIEW</p>
+    <div id = "swiper-wrapper" class="swiper-wrapper">
+       ${data
+         .map(
+           ({ author, avatar_url, review }) => `
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="${avatar_url}" class="gallery-image" alt="${author}"/>
+                <div class="author">${author}</div>
+              <p class="review">${review}</p>
+            </div>
+          </div>
+          `
+         )
+         .join('')}
+    </div>
+    <div><button id = "swiper-button-next" class="swiper-button-next">
+  <svg>
+    <use href="${arrowRightIcon}#icon-arrow-right"></use>
+  </svg>
+</button></div>
 
-export async function fetchData() {
-    try {
-        const response = await axios.get('/reviews');
-        return response.data;
-    } catch (error) {
-        reviewWrapper.insertAdjacentHTML('afterbegin', `<p class='review-error'>Not found</p>`);
-        return null;
-    }
+    <div><button id = "swiper-button-prev" class="swiper-button-prev">
+  <svg>
+    <use href="${arrowLeftIcon}#icon-arrow-left"></use>
+  </svg>
+</button></div>
+
+  </div>`;
+
+    new Swiper('.mySwiper', {
+      speed: 1000,
+      slidesPerView: 1,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      keyboard: true,
+      mousewheel: true,
+      slidesPerView: 1,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+
+        1440: {
+          slidesPerView: 4,
+          spaceBetween: 16,
+        },
+      },
+    });
+  } catch (error) {
+    console.error('Error while fetching reviews:', error.message);
+    throw error;
+  }
 }
-
-export async function renderSlide() {
-    let data = await fetchData();
-    if (data) {
-        const html = data.map(({ author, avatar_url, review }) => `<li class='swiper-slide  review-slide' style="box-sizing: border-box;">
-            <img class="review-img" src="${avatar_url}" alt="${author}" />
-            <h3 class="review-author">${author}</h3>
-            <p class="review-text">${review}</p>
-        </li>`).join('');
-
-        reviewWrapper.insertAdjacentHTML('afterbegin', html)
-
-        const swiperOptions = {
-            modules: [Navigation, Keyboard, Mousewheel],
-            initialSlide: 0,
-            slidesPerView: 1,
-            spaceBetween: 16,
-           
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-                onlyInViewport: true,
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-            breakpoints: {
-                375: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1440: { slidesPerView: 4 },
-            },
-           
-            hashNavigation: {
-                watchState: true,
-                onlyInViewport: true,
-            },
-            keyboard: {
-                enabled: true,
-                onlyInViewport: true,
-            },
-           mousewheel: {
-               invert: true,
-               onlyInViewport: true,
-  },
-            
-        };
-
-        new Swiper('.reviews-swiper', swiperOptions);
-    }
-}
+getReviewsFromServer();

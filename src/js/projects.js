@@ -1,26 +1,11 @@
-import Swiper from 'swiper';
-import { Navigation, Keyboard } from 'swiper/modules';
-
-export const projectsSwiper = new Swiper('.projects-swiper-container', {
-  modules: [Navigation, Keyboard, ],
+const projectsSwiper = new Swiper('.projects-swiper', {
   slidesPerView: 1,
-  spaceBetween: 30,
-  breakpoints: {
-    320: {
-        spaceBetween: 80,
-    },
-    375: {
-      spaceBetween: 100,
-    },
-  },
+  speed: 1000,
+  keyboard: true,
+  mousewheel: true,
+  spaceBetween: 35,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    onlyInViewport: true,
+    nextEl: '.next-project-btn',
+    prevEl: '.prev-project-btn',
   },
-  keyboard: {
-    enabled: true,
-    onlyInViewport: true,
-  },
-  
 });
