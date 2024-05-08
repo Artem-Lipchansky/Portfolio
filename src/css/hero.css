@@ -1,0 +1,229 @@
+.section.hero {
+  background-color: black;
+  /* padding: 280px 16px 36px 16px; */
+   padding-top: 300px;
+  padding-left: 32px;
+  background-image: url(../img/Herocolor6-mobile.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 2s ease-in-out;
+}
+
+.hero-container {
+  margin: 0 auto;
+  max-width: 375px;
+  padding: 280px 0 36px 0;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .section.hero {
+    background-image: url(../img/Herocolor6-mobile@2x.png);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .section.hero {
+    background-image: url(../img/Herocolor6-mobile@3x.png);
+  }
+}
+
+.hero {
+  position: relative;
+}
+
+.hero-header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-header {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: left;
+  letter-spacing: -0.03em;
+  color: #fafafa;
+  margin-left: 16px;
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+  /* margin-left: 16px;
+  margin-right: 16px; */
+  /* margin: 280px 16px 36px 16px; */
+}
+
+.hero-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-family: 'Inter Tight', sans-serif;
+  margin-top: 206px;
+  justify-content: space-between;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.hero-list-item {
+  transition: border 0.5s ease-in-out;
+}
+
+.lloyd-social {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lloyd-email {
+  width: 174px;
+  height: 32px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+}
+
+.hero-list-item:hover,
+.hero-list-item:focus {
+  border: 1px solid #fafafa;
+}
+
+.hero-list-link {
+  color: #fafafa;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.24;
+  position: relative;
+  
+}
+.hero-list{
+  padding-bottom: 32px;
+}
+
+.hero-list-link::after {
+  position: absolute;
+  content: '';
+  top: -16px;
+  bottom: -16px;
+  left: -16px;
+  right: -16px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  .lloyd-email {
+    margin-top: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .hero-list {
+    justify-content: flex-end;
+    align-items: flex-end;
+   margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero-list {
+    justify-content: flex-end;
+  }
+
+  .section.hero {
+     padding: 300px 32px 32px 32px; 
+     padding-top: 300px;
+    padding-bottom: 32px; 
+    background-image: url(../img/Herocolor6-tablet.png);
+  }
+
+  .hero-container {
+    padding: 300px 0 32px 0;
+    max-width: 768px;
+  }
+
+  .hero-header {
+    font-size: 90px;
+    margin-left: 32px;
+  }
+
+  .hero-list {
+    margin-top: 188px;
+    margin-right: 32px;
+  }
+
+  .lloyd-social {
+    width: 54px;
+    height: 54px;
+  }
+
+  .lloyd-email {
+    width: 222px;
+    height: 54px;
+  }
+
+  .hero-list-link {
+    font-size: 16px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .section.hero {
+    background-image: url(../img/Herocolor6-tablet@2x.png);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .section.hero {
+    background-image: url(../img/Herocolor6-tablet@3x.png);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .section.hero {
+    /* padding: 300px 32px 32px 178px; */
+    padding-top: 280px;
+      padding-left: 178px;
+    background-image: url(../img/Herocolor6.png);
+  }
+
+  .hero-container {
+    padding: 300px 0 32px 0;
+    max-width: 1440px;
+  }
+
+  .hero-header {
+    /* margin-left: 178px;
+    margin-right: 178px; */
+    margin: 0;
+    /* text-align: center; */
+  }
+
+  .hero-list {
+    margin-top: 243px;
+  }
+
+  .hero-list {
+    gap: 8px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .section.hero {
+    background-image: url(../img/Herocolor6@2x.png);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .section.hero {
+    background-image: url(../img/Herocolor6@3x.png);
+  }
+}
